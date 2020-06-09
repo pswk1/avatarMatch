@@ -46,11 +46,18 @@ body {
 }
 
 .card {
+  position: relative;
   background-color: black;
   height: 11em;
   width: 8em;
 }
 
-.logo {
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
