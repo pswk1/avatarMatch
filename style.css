@@ -1,0 +1,32 @@
+/* Using the Avatar Font */
+@font-face {
+  font-family: 'Avatar';
+  src: url(assets/herculanum.ttf) format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(#ffffff, #6dd5fa, #2980b9);
+}
+
+.page-title {
+  color: #ffffff;
+  font-family: Avatar, serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 6em;
+}
+
+.game-info {
+  color: #ffffff;
+  font-size: 4em;
+  font-family: Avatar, serif;
+}
