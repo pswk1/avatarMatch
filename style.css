@@ -43,11 +43,11 @@ body {
   grid-gap: 0.6em;
   margin: 3em;
   justify-content: center;
+  perspective: 31.25em;
 }
 
 .card {
   position: relative;
-  background-color: black;
   height: 11em;
   width: 8em;
 }
@@ -60,4 +60,32 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  backface-visibility: hidden;
+  transition: transform 200ms ease-in-out;
+}
+
+.card-front {
+  transform: rotateX(180deg);
+  border-color: #6dd5fa;
+}
+
+.card.visible .card-back {
+  transform: rotateY(-180deg);
+}
+
+.card.visible .card-front {
+  transform: rotateY(0);
+}
+
+.card-back {
+  background-color: black;
+  border-color: #6dd5fa;
+}
+
+.card-back:hover {
+  transform: translateY(-2.5%);
+  transition: transform 100ms ease-in-out;
 }
