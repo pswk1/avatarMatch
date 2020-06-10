@@ -10,6 +10,7 @@
 
 html {
   min-height: 100vh;
+  cursor: url('./assets/cursors/aang.cur'), auto;
 }
 
 body {
@@ -52,6 +53,10 @@ body {
   width: 8em;
 }
 
+.card:hover {
+  cursor: url('./assets/cursors/aang2.cur'), auto;
+}
+
 .card-face {
   position: absolute;
   width: 100%;
@@ -80,6 +85,51 @@ body {
   transform: rotateY(0);
 }
 
+/* .logo {
+
+}
+
+.card-matched .card-value {
+
+} */
+
+.overlay-text {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  color: #6dd5fa;
+  font-family: Avatar, serif;
+}
+
+.overlay-text-small {
+  font-size: 0.3em;
+}
+
+.overlay-text.visible {
+  display: flex;
+  flex-direction: column;
+  animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+
+  to {
+    font-size: 10em;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
 .card-back {
   background-color: black;
   border-color: #6dd5fa;
@@ -88,4 +138,15 @@ body {
 .card-back:hover {
   transform: translateY(-2.5%);
   transition: transform 100ms ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .game-container {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .game-info-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
