@@ -3,7 +3,7 @@ class AudioController {
     this.bgMusic = new Audio('assets/audio/gameStart.mp3');
     this.victorySound = new Audio('assets/audio/victory.mov');
     this.gameOverSound = new Audio('assets/audio/gameOver.mov');
-    this.bgMusic.volume = 0.4;
+    this.bgMusic.volume = 0.5;
     this.bgMusic.loop = true;
   }
   startMusic() {
@@ -32,7 +32,6 @@ class AvatarMatch {
     this.ticker = document.getElementById('moves');
     this.audioController = new AudioController();
   }
-
   startGame() {
     this.cardToCheck = null;
     this.totalClicks = 0;
@@ -40,9 +39,13 @@ class AvatarMatch {
     this.matchedCards = [];
     this.busy = true;
   }
-
-  flipCard(card) {}
-
+  flipCard(card) {
+    if (this.canFlipCard(card)) {
+      this.totalClicks++;
+      this.ticker.innerText = this.totalClicks;
+      card.classList.add('visible');
+    }
+  }
   canFlipCard(card) {
     return true;
     //return (!this.busy && !this.matchedCards.includes(card) && card !=this.cardToCheck)
@@ -67,7 +70,7 @@ function ready() {
 
   cards.forEach((card) => {
     card.addEventListener('click', () => {
-      game.flipCard();
+      game.flipCard(card);
     });
   });
 }
