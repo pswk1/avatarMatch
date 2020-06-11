@@ -7,6 +7,7 @@ class AudioController {
     this.bgMusic.loop = true;
   }
   startMusic() {
+    this.gameOverSound.pause();
     this.bgMusic.play();
   }
   stopMusic() {
@@ -83,7 +84,7 @@ class AvatarMatch {
     this.matchedCards.push(card2);
     // card1.classList.add('matched');
     // card2.classList.add('matched')
-    if (this.matchedCards.length === this.cardsArray) {
+    if (this.matchedCards.length === this.cardsArray.length) {
       this.victory();
     }
   }
@@ -145,7 +146,7 @@ class AvatarMatch {
 function ready() {
   let overlays = Array.from(document.getElementsByClassName('overlay-text'));
   let cards = Array.from(document.getElementsByClassName('card'));
-  let game = new AvatarMatch(100, cards);
+  let game = new AvatarMatch(60, cards);
 
   // CLICK TO START
   overlays.forEach((overlay) => {
