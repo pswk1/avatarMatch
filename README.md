@@ -43,4 +43,4 @@ right click index.html and open in browser
 
 4. Now enter the Avatar State!
 
-<img src= '/assets/images/amscreen.png' alt='screenshot' height='100'>
+<img src= '/assets/images/amscreen.png' alt='screenshot'>
