@@ -20,6 +20,7 @@ Match all the cards within the alotted time to successfully enter the Avatar Sta
 - Users turn over cards to see pictures of characters of 'Avatar'
 - Users click to start upon opening application and will have sixty seconds to match all cards.
 - Users can see how many card turns they have attempted
+- Users will be able to click to restart if they win or lose the game
 
 ## Installation and Usage
 
